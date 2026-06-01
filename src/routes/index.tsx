@@ -21,7 +21,7 @@ import {
   type PaceRow,
   type RaceDistance,
 } from "@/lib/prediction";
-import { getAllPacePercentiles, type PacePercentiles } from "@/lib/api/pace.functions";
+import { getPacePercentiles, type PacePercentiles } from "@/lib/api/pace.client";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
@@ -150,7 +150,7 @@ function Index() {
   // Fetch pace percentiles whenever year changes
   useEffect(() => {
     setFetchingData(true);
-    getAllPacePercentiles({ data: { year: dataYear } })
+    getPacePercentiles(dataYear)
       .then((rows) => setAllPercentiles(rows ?? []))
       .catch(() => setAllPercentiles([]))
       .finally(() => setFetchingData(false));
