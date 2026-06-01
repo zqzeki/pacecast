@@ -21,7 +21,7 @@ import {
   type PaceRow,
   type RaceDistance,
 } from "@/lib/prediction";
-import { getPacePercentiles, type PacePercentiles } from "@/lib/api/pace.client";
+import { getPacePercentiles, type PacePercentiles } from "@/lib/api/pace-fetch";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
