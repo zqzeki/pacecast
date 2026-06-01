@@ -1,4 +1,4 @@
-import { supabase } from "../supabase.client";
+import { supabase } from "../supabase-anon";
 
 export interface PacePercentiles {
   age_group: string;
